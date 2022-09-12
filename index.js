@@ -21,7 +21,7 @@ glob(`${dirName}/**/*.csproj`, null, function (err, files) {
       switch(outputType) {
         case "Library": 
           const name = `${assemblyName}.dll`;
-          if (!assemblies.includes(name) && !name.startsWith("Tester")) {
+          if (!assemblies.includes(name)) {
             console.log(name);
             assemblies.push(name);
           }
@@ -29,7 +29,7 @@ glob(`${dirName}/**/*.csproj`, null, function (err, files) {
         case "WinExe":
         case "Exe":
           const exeName = `${assemblyName}.exe`;
-          if (!assemblies.includes(exeName) && !exeName.startsWith("Tester")) {
+          if (!assemblies.includes(exeName)) {
             console.log(exeName);
             assemblies.push(exeName);
           }
